@@ -13,10 +13,7 @@ app.use(cors());
 
 app.use("/api/users", userRouter);
 mongoose
-    //   .connect(`${process.env.MONGODB_STRING}`)
-    .connect(
-        "mongodb+srv://akshay:Akm*123456@cluster0.beyyc.mongodb.net/tradebot"
-    )
+    .connect(`${process.env.MONGODB_STRING}`)
     .then(() => {
         console.log("Mongodb connected Successfully");
         app.listen(PORT, () => {
